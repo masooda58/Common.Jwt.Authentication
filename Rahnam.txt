@@ -1,0 +1,24 @@
+﻿پیکر بندی  سرویس مربوطه         
+            JwtSettingModel jwtSetting = new JwtSettingModel();
+            Configuration.Bind("JWT", jwtSetting);
+            services.AddOurAuthentication(jwtSetting);
+........................................................................
+برای استفاده از JwtSetting 
+
+ private readonly JwtSettingModel _jwtSetting;
+
+ ..............................................................
+
+ Setting.json
+
+   "JWT": {
+    "ValidAudience": "http://localhost:3000",
+    "ValidIssuer": "http://localhost:44394",
+    "AccessTokenExpirationMinutes": "2",
+    "Secret": "JWTAuthenticationHIGHsecuredPasswordVVVp1OH7Xzyr",
+    "RefreshSecret": "JsecuredPasswordVVVp1OH7Xzyr",
+    "RefreshTokenExpirationminutes": "1440"
+
+  },
+
+  .............................................................
